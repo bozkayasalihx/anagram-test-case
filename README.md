@@ -41,5 +41,5 @@ To install the AnagramFinder application, follow these steps:
  ```
 
 ## Running in Kubernetes
- To deploy the AnagramFinder application in a Kubernetes environment, checkout `./kubernetes/`
+ To deploy the anagram-finder application in a kubernetes environment, checkout `./kubernetes/` folder
  

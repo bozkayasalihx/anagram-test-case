@@ -2,16 +2,23 @@ package logger
 
 import (
 	"fmt"
+	"io"
 )
 
 type Logger interface {
 	Printf(string, ...interface{})
+	FPrintln(w io.Writer, a ...any) (n int, err error)
 }
 
 type DefaultLogger struct{}
 
 func (d *DefaultLogger) Printf(msg string, args ...interface{}) {
 	fmt.Printf(msg+"\n", args...)
+}
+
+func (d *DefaultLogger) FPrintln(w io.Writer, a ...any) (n int, err error) {
+	fmt.Fprintln(w, a...)
+	return
 }
 
 var (

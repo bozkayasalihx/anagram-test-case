@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: anagram-finder
-        image: salihbozkaya1001/anagram_finder:latest
+        image: salihbozkaya1001/anagram-finder:latest
         ports:
         - containerPort: 80

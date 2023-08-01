@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -36,7 +35,7 @@ func (a *AnagramFinder) AddWord(word, sortedWord string) {
 func (a *AnagramFinder) printCombinedAnagrams(w io.Writer) {
 	for _, words := range a.anagrams {
 		if len(words) > 1 {
-			fmt.Fprintln(w, strings.Join(words, ", "))
+			a.logger.FPrintln(w, strings.Join(words, ", "))
 		}
 	}
 }
