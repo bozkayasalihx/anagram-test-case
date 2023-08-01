@@ -47,7 +47,7 @@ func (af *AnagramFinder) ScanLoop() {
 			break
 		}
 		if err != nil {
-			af.logger.Printf("Error reading input source: %v", err)
+			af.logger.Printf("error reading input source: %v", err)
 			return
 		}
 
@@ -77,7 +77,7 @@ func Run(inputFileOrUrl string) {
 	case utils.IsFile(inputFileOrUrl):
 		StartFileVersion(inputFileOrUrl)
 	default:
-		panic("please implement the other file types")
+		panic("please implement the other file types!!!")
 	}
 }
 
