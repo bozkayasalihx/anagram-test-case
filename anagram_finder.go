@@ -40,7 +40,7 @@ func (af *AnagramFinder) printCombinedAnagrams(w io.Writer) {
 	}
 }
 
-func (af *AnagramFinder) ScanLoop() {
+func (af *AnagramFinder) scanLoop() {
 	for {
 		word, err := af.scanner.ScanWord()
 		if err == io.EOF {
@@ -66,7 +66,7 @@ func StartFileVersion(inputFileOrUrl string) {
 	sortString := sort.NewSortString()
 
 	anagramFinder := NewAnagramFinder(sortString, scanner, &logger.DefaultLogger{})
-	anagramFinder.ScanLoop()
+	anagramFinder.scanLoop()
 
 	anagramFinder.printCombinedAnagrams(os.Stdout)
 }

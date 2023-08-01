@@ -59,7 +59,7 @@ func TestAnagramFinder(t *testing.T) {
 	outputBuffer := &bytes.Buffer{}
 	anagramFinder := NewAnagramFinder(sort.NewSortString(), mockScanner, &logger.DefaultLogger{})
 
-	anagramFinder.ScanLoop()
+	anagramFinder.scanLoop()
 	anagramFinder.printCombinedAnagrams(outputBuffer)
 
 	expectedOutput := "listen, silent, enlist\n"
