@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anagram-finder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anagram-finder
+  template:
+    metadata:
+      labels:
+        app: anagram-finder
+    spec:
+      containers:
+      - name: anagram-finder
+        image: salihbozkaya1001/anagram_finder:latest
+        ports:
+        - containerPort: 80
