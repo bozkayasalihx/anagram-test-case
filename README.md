@@ -24,21 +24,21 @@ To install the AnagramFinder application, follow these steps:
    ```
 
 ## Example
- Assume we have a file named `anagrams.txt` with the following content: 
- ```text
-    abalone
-    abalones
-    abandon
-    abandoned
-    abandonedly
-    abandonee
-    abandoner
-    abandoners
-    abandoning
-    abandonment
-    abandonments
-    abandons
- ```
+   Create an `.txt` file with contains such as following contents
+   ```text
+      abalone
+      abalones
+      abandon
+      abandoned
+      abandonedly
+      abandonee
+      abandoner
+      abandoners
+      abandoning
+      abandonment
+      abandonments
+      abandons
+   ```
 
 ## Running in Kubernetes
  To deploy the anagram-finder application in a kubernetes environment, checkout `./kubernetes/` folder

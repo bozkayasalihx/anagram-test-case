@@ -28,14 +28,14 @@ func NewAnagramFinder(s sort.Sorter, w scan.WordScanner, l logger.Logger) *Anagr
 	}
 }
 
-func (a *AnagramFinder) AddWord(word, sortedWord string) {
-	a.anagrams[sortedWord] = append(a.anagrams[sortedWord], word)
+func (af *AnagramFinder) AddWord(word, sortedWord string) {
+	af.anagrams[sortedWord] = append(af.anagrams[sortedWord], word)
 }
 
-func (a *AnagramFinder) printCombinedAnagrams(w io.Writer) {
-	for _, words := range a.anagrams {
+func (af *AnagramFinder) printCombinedAnagrams(w io.Writer) {
+	for _, words := range af.anagrams {
 		if len(words) > 1 {
-			a.logger.FPrintln(w, strings.Join(words, ", "))
+			af.logger.FPrintln(w, strings.Join(words, ", "))
 		}
 	}
 }
