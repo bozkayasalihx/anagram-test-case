@@ -14,7 +14,7 @@ import (
 
 type AnagramFinder struct {
 	anagrams map[string][]string
-	Sort     sort.Sorter
+	sort     sort.Sorter
 	scanner  scan.WordScanner
 	logger   logger.Logger
 }
@@ -22,7 +22,7 @@ type AnagramFinder struct {
 func NewAnagramFinder(s sort.Sorter, w scan.WordScanner, l logger.Logger) *AnagramFinder {
 	return &AnagramFinder{
 		anagrams: make(map[string][]string),
-		Sort:     s,
+		sort:     s,
 		scanner:  w,
 		logger:   l,
 	}
@@ -51,7 +51,7 @@ func (af *AnagramFinder) ScanLoop() {
 			return
 		}
 
-		af.AddWord(word, af.Sort(strings.ToLower(utils.SenitizeWord(word))))
+		af.AddWord(word, af.sort(strings.ToLower(utils.SenitizeWord(word))))
 	}
 }
 
