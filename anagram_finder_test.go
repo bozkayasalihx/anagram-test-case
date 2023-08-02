@@ -12,13 +12,8 @@ import (
 	"github.com/bozkayasalihx/anagramfinder/sort"
 )
 
-func genMockInput() string {
-	inputData := "listen\nsilent\nenlist\nword\n"
-	return inputData
-}
-
-func genMockScanner() *scan.ScannerFromReader {
-	mockScanner := scan.NewScannerFromReader(bytes.NewReader([]byte(genMockInput())))
+func genMockScanner(inputStr string) *scan.ScannerFromReader {
+	mockScanner := scan.NewScannerFromReader(bytes.NewReader([]byte(inputStr)))
 	return mockScanner
 }
 
@@ -55,7 +50,8 @@ func TestPrintCombinedAnagrams(t *testing.T) {
 }
 
 func TestAnagramFinder(t *testing.T) {
-	mockScanner := genMockScanner()
+	inputData := "listen\nsilent\nenlist\nword\n"
+	mockScanner := genMockScanner(inputData)
 	outputBuffer := &bytes.Buffer{}
 	anagramFinder := NewAnagramFinder(sort.NewSortString(), mockScanner, &logger.DefaultLogger{})
 

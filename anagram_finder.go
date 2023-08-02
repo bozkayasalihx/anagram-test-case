@@ -65,7 +65,7 @@ func StartFileVersion(inputFileOrUrl string) {
 	scanner := scan.NewScannerFromReader(file)
 	sortString := sort.NewSortString()
 
-	anagramFinder := NewAnagramFinder(sortString, scanner, &logger.DefaultLogger{})
+	anagramFinder := NewAnagramFinder(sortString, scanner, logger.Log)
 	anagramFinder.scanLoop()
 
 	anagramFinder.printCombinedAnagrams(os.Stdout)
